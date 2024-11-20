@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import imageLoader from '@/utils/imageLoader';
+import { getImagePath } from '@/utils/paths';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -140,8 +140,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <Image
-          loader={imageLoader}
-          src="/images/hero/hero-1.jpg"
+          src={getImagePath('/images/hero/hero-1.jpg')}
           alt="Luxury Car"
           fill
           priority
@@ -215,8 +214,7 @@ export default function Home() {
               <div key={index} className="group relative overflow-hidden rounded-2xl">
                 <div className="relative h-80">
                   <Image
-                    loader={imageLoader}
-                    src={project.image}
+                    src={getImagePath(project.image)}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -250,8 +248,7 @@ export default function Home() {
               <div key={index} className="group relative overflow-hidden rounded-2xl">
                 <div className="relative h-96">
                   <Image
-                    loader={imageLoader}
-                    src={service.image}
+                    src={getImagePath(service.image)}
                     alt={service.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -427,8 +424,7 @@ export default function Home() {
       {/* Contact CTA */}
       <section id="contact" className="relative py-32">
         <Image
-          loader={imageLoader}
-          src="/images/hero/hero-2.jpg"
+          src={getImagePath('/images/hero/hero-2.jpg')}
           alt="Contact Background"
           fill
           className="object-cover"

@@ -5,10 +5,9 @@ const nextConfig = {
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
   images: {
     unoptimized: true,
-    path: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/_next/image`,
-    loader: 'custom',
-    loaderFile: './src/utils/imageLoader.ts',
+    remotePatterns: [],
   },
+  distDir: 'dist',
 }
 
 module.exports = nextConfig

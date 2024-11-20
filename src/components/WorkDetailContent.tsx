@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Work } from '@/types/work';
-import imageLoader from '@/utils/imageLoader';
+import { getImagePath } from '@/utils/paths';
 
 export default function WorkDetailContent({ work }: { work: Work }) {
   return (
@@ -15,8 +15,7 @@ export default function WorkDetailContent({ work }: { work: Work }) {
 
       <div className="relative h-96">
         <Image
-          loader={imageLoader}
-          src={work.image}
+          src={getImagePath(work.image)}
           alt={work.title}
           fill
           className="object-cover rounded-lg"
@@ -38,8 +37,7 @@ export default function WorkDetailContent({ work }: { work: Work }) {
               {work.beforeImages.map((img, index) => (
                 <div key={index} className="relative h-48">
                   <Image
-                    loader={imageLoader}
-                    src={img}
+                    src={getImagePath(img)}
                     alt={`Before ${index + 1}`}
                     fill
                     className="object-cover rounded-lg"
@@ -55,8 +53,7 @@ export default function WorkDetailContent({ work }: { work: Work }) {
               {work.afterImages.map((img, index) => (
                 <div key={index} className="relative h-48">
                   <Image
-                    loader={imageLoader}
-                    src={img}
+                    src={getImagePath(img)}
                     alt={`After ${index + 1}`}
                     fill
                     className="object-cover rounded-lg"

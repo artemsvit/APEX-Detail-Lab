@@ -36,12 +36,15 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /APEX-Detail-Lab
 
       - name: Add .nojekyll file
-        run: touch out/.nojekyll
+        run: touch dist/.nojekyll
+
+      - name: Copy public directory
+        run: cp -r public/* dist/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out
+          folder: dist
           branch: gh-pages
           clean: true
           token: ${{ secrets.GITHUB_TOKEN }}
