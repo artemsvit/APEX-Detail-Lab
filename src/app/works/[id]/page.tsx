@@ -1,5 +1,3 @@
-'use server';
-
 import { notFound } from 'next/navigation';
 import WorkDetailContent from '@/components/WorkDetailContent';
 import { Work } from '@/types/work';
@@ -46,7 +44,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function WorkDetail({ params }: { params: { id: string } }) {
+export default async function WorkDetail({ params }: { params: { id: string } }) {
   const work = works.find((w) => w.id === params.id);
 
   if (!work) {
