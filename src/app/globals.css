@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Height of the fixed navbar */
   background: rgb(var(--background));
   color: rgb(var(--foreground));
 }

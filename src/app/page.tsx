@@ -17,6 +17,19 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const navHeight = 80;
+      const top = section.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      window.scrollTo({
+        top,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const handleBookNow = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsBookingOpen(true);
@@ -103,7 +116,7 @@ export default function Home() {
       )}
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-lg">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -116,18 +129,43 @@ export default function Home() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="#gallery" className="text-white/80 hover:text-white">Gallery</Link>
-              <Link href="#services" className="text-white/80 hover:text-white">Services</Link>
-              <Link href="#process" className="text-white/80 hover:text-white">Process</Link>
-              <Link href="#contact" className="text-white/80 hover:text-white">Contact</Link>
-              <Link 
-                href="#"
+              <a 
+                href="#gallery" 
+                onClick={(e) => scrollToSection(e, 'gallery')}
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Gallery
+              </a>
+              <a 
+                href="#services" 
+                onClick={(e) => scrollToSection(e, 'services')}
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Services
+              </a>
+              <a 
+                href="#process" 
+                onClick={(e) => scrollToSection(e, 'process')}
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Process
+              </a>
+              <a 
+                href="#contact" 
+                onClick={(e) => scrollToSection(e, 'contact')}
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                Contact
+              </a>
+              <button
                 onClick={handleBookNow}
                 className="bg-[#7554A3] text-white px-6 py-2 rounded-full hover:bg-[#674099] transition-colors"
               >
                 Book Now
-              </Link>
+              </button>
             </div>
+
+            {/* Mobile menu button */}
             <button className="md:hidden text-white">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
