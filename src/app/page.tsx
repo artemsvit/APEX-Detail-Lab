@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import imageLoader from '@/utils/imageLoader';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -139,12 +140,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <Image
+          loader={imageLoader}
           src="/images/hero/hero-1.jpg"
           alt="Luxury Car"
           fill
           priority
           className="object-cover"
           sizes="100vw"
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
         
@@ -201,27 +204,30 @@ export default function Home() {
       <section id="gallery" className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-            <p className="text-white/60 text-lg md:text-xl">Witness the transformation</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Featured Work</h2>
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              Discover our commitment to excellence through our portfolio of meticulously detailed vehicles.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div 
-                key={index}
-                className="group relative aspect-[4/3] overflow-hidden rounded-lg hover-scale"
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 p-6 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                  <p className="text-white/80 mt-2">{project.description}</p>
+              <div key={index} className="group relative overflow-hidden rounded-2xl">
+                <div className="relative h-80">
+                  <Image
+                    loader={imageLoader}
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    unoptimized
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                    <p className="text-white/80">{project.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -230,43 +236,41 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-24 bg-gradient-to-b from-black to-gray-900">
+      <section id="services" className="py-24 bg-gradient-to-b from-black to-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Premium Services</h2>
-            <p className="text-white/60 text-lg md:text-xl">Elevate your vehicle to perfection</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Services</h2>
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              Experience the pinnacle of automotive care with our comprehensive detailing services.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div 
-                key={index}
-                className="group relative bg-black/30 rounded-2xl overflow-hidden hover-scale"
-              >
-                <div className="aspect-[4/5]">
+              <div key={index} className="group relative overflow-hidden rounded-2xl">
+                <div className="relative h-96">
                   <Image
+                    loader={imageLoader}
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                  
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-white/10 transform group-hover:border-blue-500/50 transition-colors duration-500">
-                      <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
-                      <p className="text-white/80 mb-6 transform opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">{service.description}</p>
-                      <Link 
-                        href={service.link}
-                        className="inline-flex items-center text-[#7554A3] hover:text-[#674099] transition-colors transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                      >
-                        Learn more
-                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </Link>
-                    </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                    <p className="text-white/80 mb-6">{service.description}</p>
+                    <Link 
+                      href={service.link}
+                      className="inline-flex items-center text-[#7554A3] hover:text-[#674099] transition-colors"
+                    >
+                      Learn more
+                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -423,11 +427,13 @@ export default function Home() {
       {/* Contact CTA */}
       <section id="contact" className="relative py-32">
         <Image
+          loader={imageLoader}
           src="/images/hero/hero-2.jpg"
           alt="Contact Background"
           fill
           className="object-cover"
           sizes="100vw"
+          unoptimized
         />
         <div className="absolute inset-0 bg-black/70" />
         
