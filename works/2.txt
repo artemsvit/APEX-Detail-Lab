@@ -1,6 +1,6 @@
 1:HL["/APEX-Detail-Lab/_next/static/media/a34f9d1faa5f3315-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:HL["/APEX-Detail-Lab/_next/static/css/68a9c42fdc2d7dac.css","style",{"crossOrigin":""}]
-0:["_0Duts6_pLSBgyMaPTebX",[[["",{"children":["works",{"children":[["id","2","d"],{"children":["__PAGE__?{\"id\":\"2\"}",{}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/APEX-Detail-Lab/_next/static/css/68a9c42fdc2d7dac.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
+2:HL["/APEX-Detail-Lab/_next/static/css/20cc8bee8a733a6f.css","style",{"crossOrigin":""}]
+0:["QS8Fg91R2dGN-raChIi0B",[[["",{"children":["works",{"children":[["id","2","d"],{"children":["__PAGE__?{\"id\":\"2\"}",{}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/APEX-Detail-Lab/_next/static/css/20cc8bee8a733a6f.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
 5:I[6954,[],""]
 6:I[7264,[],""]
 7:I[5548,["32","static/chunks/app/works/%5Bid%5D/error-5db8b0b7a0e704fe.js"],""]
