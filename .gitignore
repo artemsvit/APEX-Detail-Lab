@@ -9,6 +9,7 @@
 # next.js
 /.next/
 /out/
+/dist/
 
 # production
 /build
@@ -31,5 +32,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-node_modules
-node_modules
+
+# IDE
+.vscode/
+.idea/

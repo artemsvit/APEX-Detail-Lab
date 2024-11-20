@@ -1,0 +1,66 @@
+{
+  "Ink": {
+    "Darkest": {
+      "value": "#090a0a",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Darker": {
+      "value": "#202325",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Dark": {
+      "value": "#303437",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Base": {
+      "value": "#404446",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Light": {
+      "value": "#6c7072",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Lighter": {
+      "value": "#72777a",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    }
+  },
+  "Sky": {
+    "Base": {
+      "value": "#cdcfd0",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Dark": {
+      "value": "#979c9e",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Light": {
+      "value": "#e3e5e5",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Lightest": {
+      "value": "#f7f9fa",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Lighter": {
+      "value": "#f2f4f5",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    },
+    "Tight": {
+      "value": "#FCFCFC",
+      "type": "color",
+      "parent": "Colors/Dark Theme"
+    }
+  }
+}
