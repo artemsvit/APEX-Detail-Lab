@@ -1,6 +1,6 @@
 1:HL["/APEX-Detail-Lab/_next/static/media/a34f9d1faa5f3315-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:HL["/APEX-Detail-Lab/_next/static/css/68a9c42fdc2d7dac.css","style",{"crossOrigin":""}]
-0:["CW3YklCOY1Q8fGUE_DKXe",[[["",{"children":["prices",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/APEX-Detail-Lab/_next/static/css/68a9c42fdc2d7dac.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
+0:["_0Duts6_pLSBgyMaPTebX",[[["",{"children":["prices",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/APEX-Detail-Lab/_next/static/css/68a9c42fdc2d7dac.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
 5:I[6954,[],""]
 6:I[7264,[],""]
 8:I[8326,["326","static/chunks/326-f7dffdb7426e9e4a.js","617","static/chunks/app/prices/page-795787547cd6d473.js"],""]
