@@ -15,6 +15,24 @@
   box-sizing: border-box;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7554A3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #674099;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Height of the fixed navbar */
@@ -61,7 +79,7 @@ body {
 
 /* Hide scrollbar but keep functionality */
 @media (min-width: 1024px) {
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
@@ -77,5 +95,5 @@ body {
 
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(var(--primary) / 0.8);
-  }
+  } */
 }
