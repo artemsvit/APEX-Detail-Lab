@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/APEX-Detail-Lab',
+  basePath: process.env.NODE_ENV === 'production' ? '/APEX-Detail-Lab' : '',
   images: {
     unoptimized: true,
   },
