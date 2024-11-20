@@ -1,5 +1,7 @@
 import { Work } from '@/types/work';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const works: Work[] = [
   {
     id: '1',
@@ -11,10 +13,16 @@ export const works: Work[] = [
     '- Interior deep cleaning and leather conditioning\n' +
     '- Engine bay detailing\n' +
     '- Wheel and tire detail',
-    image: '/images/projects/mercedes-amg.jpg',
+    image: `${basePath}/images/projects/mercedes-amg.jpg`,
     category: 'Full Detail',
-    beforeImages: ['/images/projects/bmw-m4.jpg', '/images/projects/audi-rs.jpg'],
-    afterImages: ['/images/projects/porsche-911.jpg', '/images/projects/tesla-s.jpg'],
+    beforeImages: [
+      `${basePath}/images/projects/bmw-m4.jpg`,
+      `${basePath}/images/projects/audi-rs.jpg`
+    ],
+    afterImages: [
+      `${basePath}/images/projects/porsche-911.jpg`,
+      `${basePath}/images/projects/tesla-s.jpg`
+    ],
     completionDate: '2023-10-15',
   },
   {
@@ -27,10 +35,16 @@ export const works: Work[] = [
     '- Glass treatment and protection\n' +
     '- Wheel ceramic coating\n' +
     '- Final inspection and quality control',
-    image: '/images/projects/porsche-911.jpg',
+    image: `${basePath}/images/projects/porsche-911.jpg`,
     category: 'Paint Correction',
-    beforeImages: ['/images/projects/audi-rs.jpg', '/images/projects/tesla-s.jpg'],
-    afterImages: ['/images/projects/bmw-m4.jpg', '/images/projects/mercedes-amg.jpg'],
+    beforeImages: [
+      `${basePath}/images/projects/audi-rs.jpg`,
+      `${basePath}/images/projects/tesla-s.jpg`
+    ],
+    afterImages: [
+      `${basePath}/images/projects/bmw-m4.jpg`,
+      `${basePath}/images/projects/mercedes-amg.jpg`
+    ],
     completionDate: '2023-11-20',
   },
 ];
